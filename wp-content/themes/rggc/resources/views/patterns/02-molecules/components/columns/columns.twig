@@ -1,0 +1,20 @@
+<section class="l-container u-spacing">
+	<div class="l-wrap">
+		<div bp="grid {% if layout == " 3col" %}4@md{% elseif layout == " 2col" %}6@md{% else %}3@md{% endif %}">
+			{% for item in columns %}
+				<div>
+					{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+          "figure": {
+            "image": {
+              "src": Image(item.image_icon).src|resize(600, 250),
+            },
+          }
+        } %}
+					{{ item.heading }}
+					{{ item.description }}
+					{{ item.link.title }}
+					{{ item.link.url }}
+				</div>
+			{% endfor %}
+
+		</section>

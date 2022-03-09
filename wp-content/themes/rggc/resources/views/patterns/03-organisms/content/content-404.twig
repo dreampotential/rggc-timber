@@ -1,0 +1,18 @@
+{% set base_class = content.base_class|default('c-content-404') %}
+
+<article class="{{ bem_classes(base_class, content.element, content.modifiers, content.extra) }} l-container--m u-spacing--double">
+  {% include "@organisms/sections/page-headers/page-header.twig" with {
+    "page_header": {
+      "heading": {
+        "text": "404"
+      },
+      "extra": bem_classes(base_class, 'header')
+    }
+  } %}
+  {% include "@atoms/text/rich-text/rich-text.twig" with {
+    "rich_text": {
+      "text": "Sorry, we couldn't find what you're looking for.",
+      "extra": bem_classes(base_class, 'body')
+    }
+  } %}
+</article>

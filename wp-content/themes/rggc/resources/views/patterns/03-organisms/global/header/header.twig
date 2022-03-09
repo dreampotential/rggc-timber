@@ -1,0 +1,59 @@
+{% set base_class = header.base_class|default('c-header') %}
+
+<header role="banner" class="{{ bem_classes(base_class, header.element, header.modifiers, header.extra) }}">
+	<div class="{{ bem_classes(base_class, 'container') }} l-wrap l-container">
+		{% include "@atoms/images/logos/logo.twig" with {
+      "logo": {
+        "image": {
+          "src": theme.link ~ '/assets/images/logo-white.svg',
+          "alt": site.name,
+        },
+        "link": site.link,
+        "extra": bem_classes(base_class, 'logo')
+      }
+    } %}
+		{% include "@molecules/navigation/primary/primary-nav.twig" %}
+	</div>
+	<div class="mobile_menu">
+		{% include "@atoms/images/logos/logo.twig" with {
+      "logo": {
+        "image": {
+          "src": theme.link ~ '/assets/images/logo-white.svg',
+          "alt": site.name,
+        },
+        "link": site.link,
+        "extra": bem_classes(base_class, 'logo'),
+        "open": "Menu",
+        "close": "Close"
+      }
+    } %}
+		<div class="mobile_nav">
+			<h1>
+				<a href="/who-we-are" class="main_nav">Who We Are</a>
+			</h1>
+			<h1>
+				<a href="/" class="main_nav">What We Offer</a>
+			</h1>
+			<h1>
+				<a href="/portfolio" class="main_nav">Portfolio</a>
+			</h1>
+			<h1>
+				<a href="#" class="main_nav">Join Our Team</a>
+			</h1>
+			<div class="secondary_navs">
+				<p>
+					<a href="#">subcontractors</a>
+				</p>
+				<p>
+					<a href="#">in the news</a>
+				</p>
+				<p>
+					<a href="#">contact us</a>
+				</p>
+			</div>
+			<div class="header_social">
+				{% include "@molecules/navigation/social/social-nav.twig" %}
+			</div>
+		</div>
+	</div>
+</header>

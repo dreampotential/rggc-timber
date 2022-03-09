@@ -1,0 +1,33 @@
+.c-social-nav {
+  padding-top: $space-quadruple;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__list-item {
+    padding: 0 $space-half;
+
+    a {
+      &:hover {
+        svg path {
+          fill: $c-primary;
+        }
+      }
+    }
+
+    svg path {
+      transition: $transition-color;
+      fill: $c-white;
+    }
+
+    span:not(.o-icon) {
+      display: none;
+    }
+  }
+}

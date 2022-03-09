@@ -1,0 +1,42 @@
+{% set base_class = base_class|default('c-testimonial') %}
+
+<section class="c-testimonial u-spacing">
+  <div class="c-testimonial__inner">
+    <div class="c-testimonial__split">
+      <div class="c-testimonial__heading">
+        <h2>{{ title }} </h2>
+      </div>
+    </div>
+    <div class = "testimonials">
+    {% for item in testimonials %}
+      <div class = "item">
+        <div class = "testimonial">
+          {% if item.image %}
+            <div class="c-testimonial__image">
+              {% include "views/patterns/01-atoms/images/image/figure.twig" with {
+                  "figure": {
+                  "image": {
+                  "src": Image(item.image).src|resize(860, 500),
+                  },
+                  }
+              } %}
+            </div>
+          {% endif %}
+          <div class="c-testimonial__quote-wrapper">
+            <div class="c-testimonial__quote">
+              <div class="c-testimonial__quote-inner">
+                <div class="c-testimonial__quote-body">{{ item.quote }}</div>
+                <div class = "testimonial_name"><span class="c-testimonial__cite">{{ item.citation_name }}</span></div>
+              </div>
+              <div class="c-testimonial__quote-icon">
+                {% include "@atoms/images/icons/big-quote.twig" %}
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+    </div>
+  </div>
+</section>

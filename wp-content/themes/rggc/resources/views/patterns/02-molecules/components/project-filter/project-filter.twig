@@ -1,0 +1,45 @@
+{% set base_class = base_class|default('c-project-filter') %}
+<section class="c-project-filter u-spacing">
+	<div class="l-wrap l-container ga_heading">
+		<h2>Projects Gallery Headline</h2>
+		<select class="project_cat">
+			<option>Filter by project type</option>
+			{% for post in all_posts %}
+				<option>{{post.category}}</option>
+			{% endfor %}
+		</select>
+	</div>
+	<div class="c-all-projects l-wrap l-container">
+		{% for post in all_posts %}
+			<div class="project_item {{post.category}}">
+				{% include "@atoms/images/image/figure.twig" with {
+                "figure": {
+                    "link": {
+                    "url": post.link
+                    },
+                    "image": {
+                    "src": post.thumbnail.src|resize(330, 220),
+                    "alt": post.thumbnail.alt
+                    },
+                    "extra": bem_classes(base_class, 'image')
+                }
+            } %}
+				<div class="project_title">
+					<h5 class="c-intro__eyebrow">{{post.category}}</h5>
+					{% include "@atoms/text/heading/heading.twig" with {
+                    "heading": {
+                    "level": "3",
+                    "size": "s",
+                    "type": "primary",
+                    "text": post.title,
+                    "link": {
+                        "url": post.link,
+                    },
+                    "extra": bem_classes(base_class, 'heading')
+                    }
+                } %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

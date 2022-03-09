@@ -1,0 +1,62 @@
+{% set base_class = base_class|default('c-promo-section') %}
+<section class="c-promo-section u-spacing">
+	<div class="l-wrap l-container">
+		<div class="promo">
+			{% include "@molecules/intro/intro.twig" with {
+      "eyebrow": intro.sub_heading,
+      "heading": intro.heading,
+      "description": intro.description,
+    } %}
+
+			<div class="c-promo-section__columns" bp="grid 4@md">
+				{% for item in columns %}
+					<div class="c-promo-section__column">
+						{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+          "figure": {
+            "image": {
+              "src": Image(item.image).src|resize(330, 270),
+            },
+          }
+        } %}
+						{% if item.link.url %}
+							<a href="{{ item.link.url }}">
+								<h3>{{ item.heading }}</h3>
+							</a>
+						{% else %}
+							<h3>{{ item.heading }}</h3>
+						{% endif %}
+						{{ item.description }}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="promo1">
+			{% include "@molecules/intro/intro.twig" with {
+      "eyebrow": intro1.sub_heading,
+      "heading": intro1.heading,
+      "description": intro1.description,
+    } %}
+
+			<div class="c-promo-section__columns" bp="grid 4@md">
+				{% for item in columns1 %}
+					<div class="c-promo-section__column">
+						{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+          "figure": {
+            "image": {
+              "src": Image(item.image).src|resize(30, 30),
+            },
+          }
+        } %}
+						{% if item.link.url %}
+							<a href="{{ item.link.url }}">
+								<h3>{{ item.heading }}</h3>
+							</a>
+						{% else %}
+							<h3>{{ item.heading }}</h3>
+						{% endif %}
+						{{ item.description }}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>

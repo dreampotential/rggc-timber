@@ -1,0 +1,22 @@
+{% set base_class = base_class|default('c-image-gallery') %}
+<section class="c-image-gallery u-spacing">
+
+	<div class="l-wrap l-container ga_heading">
+		<h2>Gallery of Work</h2>
+	</div>
+	<div class="l-wrap l-container ga_items">
+		{% for item in image_gallery %}
+			<div class="single_ga_item">
+				{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+          "figure": {
+            "image": {
+              "src": Image(item.ga_image).src|resize(600, 500),
+            },
+          }
+        } %}
+				<h5 class="c-intro__eyebrow">{{item.ga_category}}</h5>
+				<h3>{{ item.caption }}</h3>
+			</div>
+		{% endfor %}
+	</div>
+</section>

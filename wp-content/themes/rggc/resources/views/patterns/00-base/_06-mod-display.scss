@@ -1,0 +1,148 @@
+/* ------------------------------------*\
+    $DISPLAY STATES
+\*------------------------------------ */
+
+/**
+ * Wrapping element to keep content contained and centered.
+ */
+.l-wrap {
+  padding-left: $space-double;
+  padding-right: $space-double;
+  width: 100%;
+
+  @include align-center;
+}
+
+/**
+ * Layout containers - keep content centered and within a maximum width. Also
+ * adjusts left and right padding as the viewport widens.
+ */
+
+.l-container {
+  @include align-center;
+
+  max-width: $max-width;
+
+  &--s {
+    @include align-center;
+
+    max-width: $max-width-s;
+  }
+
+  &--m {
+    @include align-center;
+
+    max-width: $max-width-m;
+  }
+
+  &--l {
+    @include align-center;
+
+    max-width: $max-width-l;
+  }
+
+  &--xl {
+    @include align-center;
+
+    max-width: $max-width-xl;
+  }
+
+  &--xxl {
+    @include align-center;
+
+    max-width: $max-width-xxl;
+  }
+}
+
+/**
+ * Display Classes
+ */
+.u-display--inline-block {
+  display: inline-block;
+}
+
+.u-display--block {
+  display: block;
+}
+
+.u-flex {
+  display: flex;
+}
+
+.u-justify-content--space-between {
+  justify-content: space-between;
+}
+
+.u-justify-content--flex-end {
+  justify-content: flex-end;
+}
+
+.u-justify-content--center {
+  justify-content: center;
+}
+
+.u-justify-items--center {
+  justify-items: center;
+}
+
+.u-align-items--center {
+  align-items: center;
+}
+
+.u-align-items--start {
+  align-items: flex-start;
+}
+
+.u-flex-direction--column {
+  flex-direction: column;
+}
+
+// Specific Widths - visible greater than #
+.u-hide-until--s {
+  @include media("<=small") {
+    display: none;
+  }
+}
+
+.u-hide-until--m {
+  @include media("<=medium") {
+    display: none;
+  }
+}
+
+.u-hide-until--l {
+  @include media("<=large") {
+    display: none;
+  }
+}
+
+.u-hide-until--xl {
+  @include media("<=xlarge") {
+    display: none;
+  }
+}
+
+// Specific Widths - hide greater than #
+.u-hide-after--s {
+  @include media(">small") {
+    display: none;
+  }
+}
+
+.u-hide-after--m {
+  @include media(">medium") {
+    display: none;
+  }
+}
+
+.u-hide-after--l {
+  @include media(">large") {
+    display: none;
+  }
+}
+
+.u-hide-after--xl {
+  @include media(">xlarge") {
+    display: none;
+  }
+}

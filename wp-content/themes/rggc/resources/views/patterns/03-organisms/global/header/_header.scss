@@ -1,0 +1,15 @@
+.c-header {
+  border-left: 15px solid $c-secondary;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-100;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-double 0;
+  }
+}

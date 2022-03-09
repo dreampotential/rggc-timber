@@ -1,0 +1,26 @@
+.c-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    padding: 0 $space $space;
+    flex: 1;
+    color: $c-primary;
+  }
+
+  &__footer {
+    padding: $space;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .o-link {
+    color: $c-secondary;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: $space-half;
+  }
+}

@@ -1,0 +1,221 @@
+/*
+ * General Variables
+ * Note: colors should go into
+ * patterns/00-base/01-colors/_color-vars.css
+ * and breakpoint related vars into
+ * patterns/00-base/base/_breakpoints.css
+*/
+
+$tests: false;
+
+/*
+ * Colors
+*/
+
+// Brand Colors
+$c-brown: #3e3232;
+$c-red: #bc312b;
+$c-gold: #bb9a54;
+
+$c-black: #000;
+$c-white: #fff;
+$c-gray: #342a2a;
+$c-gray--medium: #3e3232;
+$c-gray--light: #d7d7d7;
+$c-gray--lighter: #f3f3f2;
+$c-gray--most-light: #f8f8f8; // remove this
+
+$c-primary: $c-brown;
+$c-secondary: $c-red;
+$c-tertiary: $c-gold;
+
+// Border/Overlay Colors
+$c-border: $c-gray--light;
+$c-overlay: rgba(0, 0, 0, 0.5);
+
+// Default Colors
+$c-error: #bc312b;
+$c-body-text: $c-gray--medium;
+$c-heading-text: $c-gray;
+$c-link-text: $c-secondary;
+$c-button-bg: $c-secondary;
+$c-input-border: $c-gray--light;
+$c-background--gray: $c-gray--lighter;
+
+/*
+ * Fonts
+*/
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Open+Sans:ital,wght@0,300;0,500;1,300&display=swap");
+$font-body: "Open Sans", sans-serif; // 300, 300 italic, 500 medium
+$font-primary: "Open Sans", sans-serif;
+$font-secondary: "Marcellus"; // 400 regular
+
+$font-body--line-height: 150%;
+$font-secondary--line-height: 120%;
+
+/**
+ * Font Sizes
+ */
+
+/**
+ * Native Custom Properties
+ */
+:root {
+  --body-font-size: 0.875rem;
+  --font-size-xxs: 0.75rem;
+  --font-size-xs: 0.875rem;
+  --font-size-s: 1.125rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.313rem;
+  --font-size-xl: 1.625rem;
+  --font-size-xxl: 2rem;
+}
+
+// Medium Breakpoint
+@media screen and (min-width: 768px) {
+  :root {
+    --body-font-size: 1rem;
+    --font-size-m: 1.125rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.625rem;
+  }
+}
+
+// XLarge Breakpoint
+@media screen and (min-width: 1000px) {
+  :root {
+    --font-size-m: 1.313rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2.25rem;
+    --font-size-xxl: 3.375rem;
+  }
+}
+
+$font-size-body: var(--body-font-size, 1rem); // 16
+
+$font-size-xxs: var(--font-size-xxs, 0.75rem); // 12
+$font-size-xs: var(--font-size-xs, 0.875rem); // 14
+$font-size-s: var(--font-size-s, 1.125rem); // 18
+$font-size-m: var(--font-size-m, 1.313rem); // 21
+$font-size-l: var(--font-size-l, 1.5rem); // 24
+$font-size-xl: var(--font-size-xl, 2.25rem); // 36
+$font-size-xxl: var(--font-size-xxl, 3.375rem); // 54
+
+/**
+ * Grid.
+ */
+$grid-columns: 12;
+$gutter: 40px;
+
+/**
+ * Spacing.
+ */
+$space: 20px;
+
+/**
+ * Spacing - Times.
+ */
+$space-and-half: $space * 1.5;
+$space-double: $space * 2;
+$space-triple: $space * 3;
+$space-quadruple: $space * 4;
+$space-quintuple: $space * 5;
+$space-sextuple: $space * 6;
+$space-septuple: $space * 7;
+
+/**
+ * Spacing - Divided.
+ */
+$space-three-fourth: $space * 0.75;
+$space-one-half: $space / 2;
+$space-half: $space-one-half;
+$space-one-third: $space / 3;
+$space-third: $space-one-third;
+$space-one-fourth: $space / 4;
+$space-fourth: $space-one-fourth;
+$space-quarter: $space-one-fourth;
+$space-one-fifth: $space / 5;
+$space-one-sixth: $space / 6;
+$space-one-seventh: $space / 7;
+$space-one-eighth: $space / 8;
+
+/**
+ * Common breakpoints.
+ */
+$xsmall: 320px;
+$small: 500px;
+$medium: 768px;
+$large: 960px;
+$xlarge: 1260px;
+$xxlarge: 1440px;
+
+$breakpoints: (
+  "xsmall": $xsmall,
+  "small": $small,
+  "medium": $medium,
+  "large": $large,
+  "xlarge": $xlarge,
+  "xxlarge": $xxlarge,
+);
+
+/**
+ * Max width.
+ */
+$max-width: $xlarge;
+$max-width-s: 600px;
+$max-width-m: 800px;
+$max-width-l: $large;
+$max-width-xl: $xlarge;
+$max-width-xxl: $xxlarge;
+
+/**
+ * Icons.
+ */
+$icon-xsmall: 10px;
+$icon-small: 12px;
+$icon-medium: 32px;
+$icon-large: 40px;
+$icon-xlarge: 56px;
+$icon-xxlarge: 128px;
+
+/**
+ * Border/Shadow Styles.
+ */
+$border-radius--small: 3px;
+$border-radius: 5px;
+$border--standard: 1px solid $c-gray--light;
+$box-shadow: 0 4px 16px rgba(black, 0.25);
+$box-shadow--small: -16px 0px 32px rgba(0, 0, 0, 0.04);
+$box-shadow--large: 0px 16px 32px rgba(0, 0, 0, 0.08);
+
+/**
+ * Transitions.
+ */
+$transition-effect: cubic-bezier(0.86, 0, 0.07, 1);
+$transition-all: all 0.25s $transition-effect;
+$transition-color: color 0.25s $transition-effect;
+
+/**
+ * Z Index.
+ */
+$z-index-vanish: -1;
+$z-index-none: 0;
+$z-index-1: 100;
+$z-index-2: 200;
+$z-index-5: 500;
+$z-index-10: 1000;
+$z-index-15: 1500;
+$z-index-30: 3000;
+$z-index-50: 5000;
+$z-index-75: 7500;
+$z-index-100: 10000;
+
+$z-index-mq-display: $z-index-100;
+$z-index-menu-toggle: $z-index-100;
+$z-index-back-to-top: $z-index-100;
+
+/*
+ * Theme variables.
+ */
+$sidebar-width: 300px;
+$main-width: calc(100% - (#{$sidebar-width}));

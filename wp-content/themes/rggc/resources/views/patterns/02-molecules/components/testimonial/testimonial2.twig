@@ -1,0 +1,26 @@
+{% set base_class = base_class|default('c-testimonial') %}
+
+<section class="c-testimonial u-spacing">
+  <div class="c-testimonial__inner">
+    <div class = "testimonials2">
+    {% for item in testimonials %}
+      <div class = "item2" style = "display: flex;">
+        <div class = "testimonial2">
+          <div class="c-testimonial2__quote-wrapper">
+            <div class="c-testimonial2__quote">
+              <div class="c-testimonial2__quote-inner">
+                <div class="c-testimonial2__quote-body">{{ item.quote }}</div>
+                <div class = "testimonial_name" style = "text-transform: uppercase; font-size: 12px; width: 100%;"><span class="c-testimonial__cite">{{ item.citation_name }}</span></div>
+              </div>
+              <div class="c-testimonial2__quote-icon">
+                {% include "@atoms/images/icons/big-quote.twig" %}
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+    </div>
+  </div>
+</section>

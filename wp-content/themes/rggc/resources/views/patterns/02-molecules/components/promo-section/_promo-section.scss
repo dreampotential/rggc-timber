@@ -1,0 +1,42 @@
+.c-promo-section {
+  padding-bottom: $space-double;
+  position: relative;
+  overflow: hidden;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM5OSIgaGVpZ2h0PSI1ODUiIHZpZXdCb3g9IjAgMCAxMzk5IDU4NSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTS0xIDU4NC41SDEzOTlWMEwtMSAzNDRWNTg0LjVaIiBmaWxsPSIjRjNGM0YyIi8+Cjwvc3ZnPgo=);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 96px;
+    position: absolute;
+    display: block;
+    top: 5%;
+    left: 0;
+    background-color: $c-gray--lighter;
+  }
+
+  &__columns {
+    grid-gap: 20px;
+    @include media(">medium") {
+      grid-gap: 40px;
+    }
+  }
+
+  .o-figure {
+    margin-bottom: $space;
+  }
+
+  &__column {
+    text-align: center;
+    color: $c-primary;
+    margin-bottom: $space-double;
+
+    h3 {
+      @include o-heading();
+      font-size: $font-size-l;
+      margin-bottom: $space;
+    }
+  }
+}

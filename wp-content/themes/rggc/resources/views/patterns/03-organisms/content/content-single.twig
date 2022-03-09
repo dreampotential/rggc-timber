@@ -1,0 +1,32 @@
+{% set base_class = content.base_class|default('c-content-single') %}
+
+<article class="{{ bem_classes(base_class, content.element, content.modifiers, content.extra) }} l-container u-spacing--double">
+  {% include "@organisms/sections/page-headers/page-header.twig" with {
+    "page_header": {
+      "heading": {
+        "text": post.title
+      },
+      "extra": [
+        "l-container--m",
+        bem_classes(base_class, 'header')
+      ]
+    }
+  } %}
+  {% include "@atoms/images/image/responsive-image.twig" with {
+    "image": {
+      "srcset": post.thumbnail.src|resize(720, 405) ~ ' 720w, ' ~ post.thumbnail.src|resize(960, 540) ~ ' 960w',
+      "src": post.thumbnail.src|resize(500, 281),
+      "alt": post.thumbnail.alt,
+      "extra": bem_classes(base_class, 'image')
+    }
+  } %}
+  {% include "@atoms/text/rich-text/rich-text.twig" with {
+    "rich_text": {
+      "text": post.content,
+      "extra": [
+        "l-container--m",
+        bem_classes(base_class, 'body')
+      ]
+    }
+  } %}
+</article>

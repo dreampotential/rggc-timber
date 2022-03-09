@@ -1,0 +1,43 @@
+{% set base_class = base_class|default('c-split-media-content') %}
+<section class="l-container u-spacing c-split-media-content">
+	<div class="l-wrap">
+		<div class="{% if layout %}split-media-content-right {% else %}split-media-content-left{% endif %}">
+			<div class="split-media-text">
+				{{ image_or_video }}
+				{{ video }}
+				<h5 class="c-intro__eyebrow">{{ subheading }}</h5>
+				<h2>{{ heading }}</h2>
+				<p>{{ description }}</p>
+				{% if button.title %}
+					<div class="view_project">
+						<a herf={{button.url}}>{{button.title}}</a>
+					</div>
+				{% endif %}
+				{% if project_details %}
+					{% for detail in project_details %}
+					<div class = "project_detail">
+						<div class = "detail_img">
+							<img src = {{detail.about_image}}>
+						</div>
+						<div class = "detail_txt">
+							<h2>{{detail.about_heading}}</h2>
+							<h3>{{detail.about_description}}</h3>
+						</div>
+					</div>
+					{% endfor %}
+				{% endif %}
+				
+				{{ button.target }}
+			</div>
+			<div class="split-media-img">
+				{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+            "figure": {
+              "image": {
+                "src": Image(image).src|resize(300, 300),
+              },
+            }
+        } %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,71 @@
+/*
+ * Generic header styles:
+ * All arguments are optional. If not defined, the defaults below will be used
+*/
+
+@mixin o-heading() {
+  font-family: $font-secondary;
+  font-weight: 400;
+  line-height: $font-secondary--line-height;
+  color: $c-heading-text;
+}
+
+@mixin o-nav() {
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 19px;
+  color: $c-heading-text;
+}
+
+.o-heading--xl {
+  @include o-heading();
+  font-size: $font-size-xxl;
+}
+
+h1,
+.o-heading--l {
+  @include o-heading();
+  font-size: $font-size-xxl;
+}
+
+h2,
+h3.gform_title {
+  @include o-heading();
+  font-size: $font-size-xl;
+}
+
+.o-heading--m {
+  @include body-copy;
+}
+
+h3,
+h4,
+h5,
+h6,
+.o-heading--s {
+  @include o-heading();
+  font-size: $font-size-s;
+}
+
+// Base Text Styles
+
+p,
+li {
+  line-height: $font-body--line-height;
+}
+
+.u-font-body {
+  font-size: $font-size-body;
+}
+
+.u-font--l {
+  font-size: $font-size-m;
+}
+
+.u-font--m {
+  font-size: $font-size-s;
+}
+
+.u-font--s {
+  font-size: $font-size-xs;
+}

@@ -1,0 +1,38 @@
+{% set base_class = base_class|default('c-full-media') %}
+<section class="c-full-media l-container u-spacing">
+	<div class="l-wrap">
+		{{ media_type }}
+		<div class="project_content_txt">
+			{% if heading1 %}
+				<h2>{{heading1}}</h2>
+			{% endif %}
+			{% if description1 %}
+				<p>{{description1}}</p>
+			{% endif %}
+		</div>
+
+		<div class="project_content_media">
+			{% if full_video %}
+				<object data={{full_video}} width="100%" height: "500"></object>
+			{% endif %}
+
+			{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+				"figure": {
+				"image": {
+					"src": Image(full_image).src|resize(600, 250),
+				},
+				}
+			} %}
+			<p>{{ caption }}</p>
+		</div>
+
+		<div class="project_content_txt">
+			{% if heading2 %}
+				<h2>{{heading2}}</h2>
+			{% endif %}
+			{% if description2 %}
+				<p>{{description2}}</p>
+			{% endif %}
+		</div>
+	</div>
+</section>

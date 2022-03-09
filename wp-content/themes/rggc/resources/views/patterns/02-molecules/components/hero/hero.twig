@@ -1,0 +1,51 @@
+{% set base_class = hero.base_class|default('c-hero') %}
+<section class="{{
+  bem_classes(
+    base_class,
+    hero.element,
+    hero.modifiers,
+    hero.extra
+  )
+  }}">
+  <div class="{{ bem_classes(base_class, 'background-image') }}" style="background-image:url({{ hero.background_image.url }}"></div>
+  <div class="u-flex u-flex-direction--column u-justify-content--space-between l-wrap l-container">
+    {% if hero.heading or hero.description %}
+      <div bp="grid">
+        <div class="{{ bem_classes(base_class, 'content') }}" bp="8@md">
+          <div class = "top_project_cat" style = "padding-left: 30px;">
+            <h5 class="c-intro__eyebrow">{{project_cat}}</h5>
+          </div>
+          {% if hero.heading %}
+            {% include '@atoms/text/heading/heading.twig' with {
+              heading: {
+                level: '1',
+                text: hero.heading,
+                extra: bem_classes(base_class, 'heading')
+              }
+            } %}
+          {% endif %}
+          {% if hero.description %}
+            {% include '@atoms/text/dek/dek.twig' with {
+              dek: {
+                text: hero.description,
+                extra: ['u-space--and-half', bem_classes(base_class, 'dek')]
+              }
+            } %}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if hero.button %}
+      <div class="{{ bem_classes(base_class, 'cta') }}">
+        {% include '@atoms/buttons/button.twig' with {
+          button: {
+            text: hero.button.title,
+            url: hero.button.url,
+            target: button.target,
+            extra: bem_classes(base_class, 'button')
+          }
+        } %}
+      </div>
+    {% endif %}
+  </div>
+</section>

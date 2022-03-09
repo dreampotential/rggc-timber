@@ -1,0 +1,52 @@
+{% set base_class = card.base_class|default('c-card') %}
+
+{% if card %}
+	<div class="{{ bem_classes(base_class, card.element, card.modifiers, card.extra) }}" {{ add_attributes(card.attributes) }}>
+		{% include "@atoms/images/image/figure.twig" with {
+      "figure": {
+        "link": {
+          "url": card.link
+        },
+        "image": {
+          "src": card.thumbnail.src|resize(330, 220),
+          "alt": card.thumbnail.alt
+        },
+        "extra": bem_classes(base_class, 'image')
+      }
+    } %}
+		<div class="card_title">
+			<h5 class="c-intro__eyebrow">{{card.category}}</h5>
+			{% include "@atoms/text/heading/heading.twig" with {
+        "heading": {
+          "level": "3",
+          "size": "s",
+          "type": "primary",
+          "text": card.title,
+          "link": {
+            "url": card.link,
+          },
+          "extra": bem_classes(base_class, 'heading')
+        }
+      } %}
+		</div>
+		<div class="{{ bem_classes(base_class, 'content') }} u-spacing--half">
+			{% include "@atoms/text/dek/dek.twig" with {
+        "dek": {
+          "text": card.preview.length(20).read_more(false),
+          "extra": bem_classes(base_class, 'dek')
+        }
+      } %}
+		</div>
+		<div class="{{ bem_classes(base_class, 'footer') }}">
+			{% include "@atoms/links/link.twig" with {
+        "link": {
+          "url": card.link,
+          "text": "View Case Study",
+          "modifiers": "alt",
+          "arrow": true,
+          "extra": bem_classes(base_class, 'link')
+        }
+      } %}
+		</div>
+	</div>
+{% endif %}

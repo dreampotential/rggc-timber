@@ -1,0 +1,48 @@
+{% set base_class = footer.base_class|default('c-footer') %}
+
+<footer class="{{ bem_classes(base_class) }} u-background-color--secondary" role="contentinfo">
+	<div class="{{ bem_classes(base_class, 'container') }} l-wrap l-container" bp="grid gap-none vertical-center">
+		<div class="{{ bem_classes(base_class, 'split-block') }} u-background-color--secondary" bp="5@md">
+			{% include "@atoms/images/logos/logo.twig" with {
+        "logo": {
+          "image": {
+            "src": theme.link ~ '/assets/images/logo-white.svg',
+            "alt": site.name,
+          },
+          "link": site.link,
+          "extra": bem_classes(base_class, 'logo')
+        }
+      } %}
+			<div class="{{ bem_classes(base_class, 'social-nav') }}">
+				{% include "@molecules/navigation/social/social-nav.twig" %}
+			</div>
+		</div>
+		<div class="{{ bem_classes(base_class, 'split-block') }} u-color--white u-background-color--primary" bp="7@md">
+			<div class="{{ bem_classes(base_class, 'utility-section') }}">
+				<div class = "footer_right_first">
+          <div class="{{ bem_classes(base_class, 'nav') }}">
+            <h3 class="{{ bem_classes(base_class, 'column-heading') }} o-heading--m u-padding--half--bottom">Resources</h3>
+            {% include "@molecules/navigation/footer/footer-nav.twig" %}
+          </div>
+          <div class="{{ bem_classes(base_class, 'contact') }}">
+            <h3 class="{{ bem_classes(base_class, 'column-heading') }} o-heading--m u-padding--half--bottom">Contact Info</h3>
+            {{options.address}}
+            <div>PH<a href={`tel:${options.phone} `}>{{options.phone}}</a>
+            </div>
+            <div>FX{{options.fax}}</div>
+            <div>PH<a href={`mailto:${options.mail} `}>{{options.mail}}</a>
+            </div>
+          </div>
+        </div>
+				<div class="{{ bem_classes(base_class, 'licence') }}">
+					<h3 class="{{ bem_classes(base_class, 'column-heading') }} o-heading--m u-padding--half--bottom">Licence Numbers</h3>
+					<ul>
+						{% for item in options.licence %}
+							<li>{{item.licence}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,37 @@
+{% extends "@templates/_layout.twig" %}
+
+{% block content %}
+	{% include "@molecules/components/hero/hero.twig" %}
+	{# {% include ['@organisms/content/content-single-' ~ post.post_type|replace({'_': '-'}) ~ '.twig', '@organisms/content/content-single.twig'] %} #}
+	{% for section in blocks %}
+		{% if section.blockName == 'acf/split-media-content' %}
+			{% include "@molecules/components/split-media-content/split-media-content.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/image-gallery' %}
+			{% include "@molecules/components/image-gallery/image-gallery.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/testimonial' %}
+			{% include "@molecules/components/testimonial/testimonial2.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/full-width-media' %}
+			{% include "@molecules/components/full-width-media/full-width-media.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/project-content' %}
+			{% include "@molecules/components/project-content/project-content.twig" %}
+		{% endif %}
+	{% endfor %}
+	<div class="next_prev l-container l-wrap">
+		<a href={{prev_project}}>
+			<span class="o-icon left o-icon--small" aria-label="Arrow">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 18 13.61">
+					<path d="M0,7.94H14.17L10.59,12,12,13.61,18,6.8,12,0,10.59,1.6l3.58,4.07H0Z"></path>
+				</svg>
+			</span>Previous Project</a>
+		<a href={{next_project}}>Next Project<span class="o-icon right o-icon--small" aria-label="Arrow">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 18 13.61">
+					<path d="M0,7.94H14.17L10.59,12,12,13.61,18,6.8,12,0,10.59,1.6l3.58,4.07H0Z"></path>
+				</svg>
+			</span>
+		</a>
+	</div>
+{% endblock %}

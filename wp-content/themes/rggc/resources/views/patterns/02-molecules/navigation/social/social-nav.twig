@@ -1,0 +1,28 @@
+{% set base_class = social_nav.base_class|default('c-social-nav') %}
+
+{% if social_nav.name == "Social Navigation" %}
+  <nav role="navigation" class="{{ bem_classes(base_class, social_nav.element, social_nav.modifiers, social_nav.extra) }}">
+    {% if social_nav.items %}
+      <ul class="{{ bem_classes(base_class, 'list') }}">
+        {% for item in social_nav.get_items %}
+          <li class="{{ bem_classes(base_class, 'list-item') }}">
+            {% include "@atoms/links/link.twig" with {
+              "link": {
+                "text": item.title,
+                "url": item.url,
+                "target": item.target,
+                "modifiers": "no-shadow",
+                "extra": [
+                  bem_classes(base_class, 'link'),
+                ]|merge(item.classes),
+                "icon": {
+                  "name": item.title|lower
+                }
+              }
+            } %}
+          {% endfor %}
+        </li>
+      </ul>
+    {% endif %}
+  </nav>
+{% endif %}

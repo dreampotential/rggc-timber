@@ -1,0 +1,20 @@
+{% set base_class = content.base_class|default('c-content') %}
+
+<article class="{{ bem_classes(base_class, content.element, content.modifiers, content.extra) }} l-container--m u-spacing--double">
+  {% include "@organisms/sections/page-headers/page-header.twig" with {
+    "page_header": {
+      "heading": {
+        "text": post.title
+      },
+      "extra":   bem_classes(base_class, 'header')
+    }
+  } %}
+  {% include "@organisms/sections/feeds/card-grid.twig" with {
+    "card_grid": {
+      "heading": "Heading",
+      "dek": "This is the dek",
+      "posts": posts,
+      "extra": bem_classes(base_class, 'feed')
+    }
+  } %}
+</article>

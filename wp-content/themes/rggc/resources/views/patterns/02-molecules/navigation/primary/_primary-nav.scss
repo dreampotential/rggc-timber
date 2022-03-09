@@ -1,0 +1,20 @@
+.c-primary-nav {
+  &__parent-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__parent-list-item {
+    margin-left: $space-double;
+  }
+
+  .o-link {
+    color: $c-white;
+    transition: $transition-color;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+}

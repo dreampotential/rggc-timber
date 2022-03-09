@@ -1,0 +1,53 @@
+.o-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &#{&}--quotes {
+    margin-bottom: $space-half;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--xsmall,
+  &--xsmall svg {
+    width: $icon-xsmall;
+    height: $icon-xsmall;
+    min-width: $icon-xsmall;
+  }
+
+  &--small,
+  &--small svg {
+    width: $icon-small;
+    height: $icon-small;
+    min-width: $icon-small;
+  }
+
+  &--medium,
+  &--medium svg {
+    width: $icon-medium;
+    height: $icon-medium;
+    min-width: $icon-medium;
+  }
+
+  &--large,
+  &--large svg {
+    width: $icon-large;
+    height: $icon-large;
+    min-width: $icon-large;
+  }
+
+  &--xlarge,
+  &--xlarge svg {
+    width: $icon-xlarge;
+    height: $icon-xlarge;
+    min-width: $icon-xlarge;
+  }
+
+  &--xxlarge,
+  &--xxlarge svg {
+    width: $icon-xxlarge;
+    height: $icon-xxlarge;
+    min-width: $icon-xxlarge;
+  }
+}

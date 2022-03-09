@@ -1,0 +1,77 @@
+/* ------------------------------------ *\
+    $MIXINS
+\* ------------------------------------ */
+
+/**
+ * Standard paragraph
+ */
+@mixin body-copy {
+  font-family: $font-body;
+  font-size: $font-size-body;
+  line-height: 1.5;
+}
+
+p {
+  @include body-copy;
+}
+
+@mixin u-font--xs {
+  font-family: $font-body;
+  font-size: $font-size-xs;
+  line-height: 1.4;
+}
+
+.u-font--xs {
+  @include u-font--xs;
+}
+
+@mixin u-font--s {
+  font-family: $font-body;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.u-font--s {
+  @include u-font--s;
+}
+
+@mixin u-font--m {
+  font-family: $font-body;
+  font-size: $font-size-m;
+  line-height: 1.6;
+}
+
+.u-font--m {
+  @include u-font--m;
+}
+
+/**
+ * String interpolation function for SASS variables in SVG Image URI's
+ */
+@function url-friendly-color($color) {
+  @return "%23" + str-slice("#{$color}", 2, -1);
+}
+
+/*
+ * Align center.
+*/
+@mixin align-center {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/*
+ * Colors.
+*/
+$colors: ("primary": $c-primary, "secondary": $c-secondary, "tertiary": $c-tertiary, "white": $c-white, "black": $c-black, "gray": $c-gray);
+
+$styles: ("background-color": "background-color", "color": "color", "path-fill": "fill");
+
+@each $style_key, $style_value in $styles {
+  @each $color_key, $color_value in $colors {
+    .u-#{$style_key}--#{$color_key} {
+      #{$style_value}: #{$color_value};
+    }
+  }
+}

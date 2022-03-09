@@ -1,0 +1,154 @@
+.c-testimonial {
+  margin-top: 0 !important;
+  padding-bottom: $space-triple;
+  @include media(">medium") {
+    padding-bottom: $space-quadruple;
+  }
+
+  .testimonials2 {
+    padding-top: $space;
+    padding-bottom: $space;
+    background-image: url("/rggc/wp-content/uploads/2022/02/rggc-latest-work-section.png");
+    @include media(">medium") {
+      padding: 100px 0;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: #3e3232;
+      opacity: 0.96;
+      left: 0;
+      top: 0;
+    }
+
+    .testimonial2 {
+      display: flex;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+
+      .c-testimonial2__quote-wrapper {
+        width: 80%;
+        padding: $space-double 0;
+        margin-left: auto;
+        margin-right: auto;
+        @include media(">medium") {
+          width: 50%;
+        }
+
+        .c-testimonial2__quote-body {
+          color: #fff;
+          margin-bottom: $space-double;
+
+          p {
+            font-size: $font-size-m;
+            line-height: 1.65;
+          }
+        }
+
+        .c-testimonial__cite {
+          font-size: 12px;
+        }
+
+        .c-testimonial2__quote-icon {
+          position: absolute;
+          top: 5%;
+          right: 5%;
+          @include media(">medium") {
+            top: 0%;
+            right: 20%;
+          }
+        }
+      }
+    }
+
+    .slick-dots {
+      display: block;
+      width: 100%;
+      top: auto;
+      bottom: 5%;
+      @include media(">medium") {
+        bottom: 15%;
+      }
+    }
+  }
+
+  &__split {
+    @include media(">medium") {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    padding: $space-quadruple;
+    @include media(">medium") {
+      width: 40%;
+      order: 1;
+    }
+
+    h2 {
+      color: $c-primary;
+    }
+  }
+
+  &__image {
+    @include media(">medium") {
+      width: 60%;
+      order: 0;
+    }
+  }
+
+  &__quote-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -12%;
+  }
+
+  &__quote {
+    background-color: #f3f3f2;
+    padding: $space-triple $space-double;
+    position: relative;
+    width: 90%;
+    @include media(">medium") {
+      padding: $space-quadruple;
+      width: 60%;
+    }
+  }
+
+  &__quote-body {
+    color: $c-primary;
+    margin-bottom: $space-double;
+    @include media(">medium") {
+      max-width: 75%;
+    }
+
+    p {
+      font-size: $font-size-m;
+      line-height: 1.65;
+    }
+  }
+
+  &__cite {
+    font-family: $font-secondary;
+    max-width: 50%;
+    @include media(">medium") {
+      max-width: 75%;
+    }
+  }
+
+  &__quote-icon {
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    @include media(">medium") {
+      bottom: auto;
+      top: 5%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<section class="l-container u-spacing">
+	<div class="l-wrap">
+		{% for item in accordion_panel %}
+			{{ item.heading }}
+			{{ item.description }}
+			{% include "views/patterns/01-atoms/images/image/figure.twig" with {
+          "figure": {
+            "image": {
+              "src": Image(item.background_image).src|resize(600, 250),
+            },
+          }
+        } %}
+		{% endfor %}
+
+	</section>

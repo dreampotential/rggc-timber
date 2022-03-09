@@ -1,0 +1,23 @@
+@for $i from 1 to 999 {
+  .u-animation-delay *:nth-child(#{$i}) {
+    animation-delay: $i * 0.25s + 0.5s;
+  }
+}
+
+.u-fade-up {
+  transform: translateY(40px);
+  animation: fade-up 1.4s $transition-effect forwards;
+}
+
+@keyframes fade-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}

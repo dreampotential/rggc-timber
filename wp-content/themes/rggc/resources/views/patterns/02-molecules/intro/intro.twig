@@ -1,0 +1,12 @@
+{% set base_class = 'c-intro' %}
+
+<section class="{{ bem_classes( base_class, element, modifiers, extra ) }}">
+  <div bp="grid">
+    <div class="{{ bem_classes(base_class, 'heading-area') }}" bp="4@md">
+      <h5 class="{{ bem_classes(base_class, 'eyebrow') }}">{{ eyebrow }}</h5>
+      <h2 class="{{ bem_classes(base_class, 'heading') }}">{{ heading }}</h2>
+    </div>
+    <div class="{{ bem_classes(base_class, 'description') }}" bp="8@md">
+      {{ description }}
+    </div>
+</section>

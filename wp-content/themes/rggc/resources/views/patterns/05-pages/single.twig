@@ -1,0 +1,11 @@
+{% extends "@templates/_layout.twig" %}
+
+{% block content %}
+{% include "@molecules/components/hero/hero.twig" with {
+  hero: {
+    heading: post.title,
+    description: post.category
+  }
+} %}
+  {% include ['@organisms/content/content-single-' ~ post.post_type|replace({'_': '-'}) ~ '.twig', '@organisms/content/content-single.twig'] %}
+{% endblock %}

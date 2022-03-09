@@ -1,0 +1,25 @@
+{% set base_class = base_class|default('c-form-section') %}
+
+<section class="c-form-section u-spacing" style="background-image:url({{ Image(background_image).src }}">
+	<div class="c-form-section__background-cover"></div>
+	<div class="consultation_form_body l-container">
+		<div class="consultation_form" bp="grid">
+			<div class="c-form-section__form-wrapper" bp="6@md">
+				<h5 class="c-intro__eyebrow">Get in touch</h5>
+				{{contact_form}}
+			</div>
+			<div class="c-form-section__logo-wrapper" bp="6@md">
+				{% include "@atoms/images/logos/rggc-logo-vertical.twig" with {
+          "logo": {
+            "image": {
+              "src": theme.link ~ '/assets/images/logo-white.svg',
+              "alt": site.name,
+            },
+            "link": site.link,
+            "extra": bem_classes(base_class, 'logo')
+          }
+        } %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,35 @@
+.c-footer {
+  background-image: linear-gradient(to right, $c-secondary 41.66666667%, $c-primary 58.33333333%);
+
+  &__split-block {
+    background-blend-mode: multiply;
+    padding: $space-triple 0;
+  }
+
+  &__utility-section {
+    text-align: right;
+    padding: $space-triple 0 $space-triple $space-quadruple;
+    color: $c-gray--lighter;
+
+    p {
+      color: $c-gray--lighter;
+      font-size: $font-size-xs;
+      margin-bottom: $space-half;
+    }
+  }
+
+  &__logo {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    path {
+      fill: $c-white;
+    }
+  }
+
+  &__licence {
+    ul {
+      list-style: none;
+    }
+  }
+}

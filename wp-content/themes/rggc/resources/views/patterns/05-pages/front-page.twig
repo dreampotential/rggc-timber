@@ -1,0 +1,22 @@
+{% extends "@templates/_layout.twig" %}
+
+{% block content %}
+	{% include "@molecules/components/hero/hero.twig"%}
+	{% include ['@organisms/content/content-page-' ~ post.post_type|replace({'_': '-'}) ~ '.twig', '@organisms/content/content-page.twig'] %}
+	{% for section in blocks %}
+		{% if section.blockName == 'acf/latest' %}
+			{% include "@molecules/components/latest/latest.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/promo-section' %}
+			{% include "@molecules/components/promo-section/promo-section.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/testimonial' %}
+			{% include "@molecules/components/testimonial/testimonial.twig" %}
+		{% endif %}
+		{% if section.blockName == 'acf/form-section' %}
+			{% include "@molecules/components/form-section/form-section.twig" %}
+		{% endif %}
+	{% endfor %}
+
+
+{% endblock %}

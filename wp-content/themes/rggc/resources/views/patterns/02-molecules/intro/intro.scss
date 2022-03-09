@@ -1,0 +1,21 @@
+.c-intro {
+  padding: $space-triple 0;
+
+  &__eyebrow {
+    color: $c-tertiary;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    margin-bottom: $space-quarter;
+  }
+
+  &__heading-area {
+    @include media(">medium") {
+      padding-right: $space-triple;
+    }
+  }
+
+  &__description {
+    color: $c-primary;
+    margin-top: $space + 2;
+  }
+}

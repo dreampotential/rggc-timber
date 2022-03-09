@@ -1,0 +1,14 @@
+@mixin o-blockquote {
+  font-size: $font-size-xl;
+
+  cite {
+    display: block;
+    margin-top: $space;
+    @include o-heading();
+    font-size: $font-size-s;
+  }
+}
+
+.o-blockquote {
+  @include o-blockquote;
+}

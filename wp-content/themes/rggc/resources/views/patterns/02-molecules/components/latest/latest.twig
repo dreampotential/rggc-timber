@@ -1,0 +1,12 @@
+<section class="c-latest-wrapper">
+
+{% include "@organisms/sections/feeds/card-grid.twig" with {
+  "card_grid": {
+    "heading": title_latest,
+    "background": background_image_latest.url,
+    "dek": "",
+    "posts": posts,
+    "extra": bem_classes(base_class, 'feed')
+  }
+} %}
+</section>

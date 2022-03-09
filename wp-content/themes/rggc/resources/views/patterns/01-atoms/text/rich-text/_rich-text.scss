@@ -1,0 +1,54 @@
+.o-rich-text {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: auto;
+
+  & > * + * {
+    margin-top: $space;
+
+    @include media('>medium') {
+      margin-top: $space-and-half;
+    }
+  }
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    padding-top: $space;
+    margin-bottom: -$space-half;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  h2:empty,
+  h3:empty,
+  p:empty {
+    display: none;
+  }
+
+  > p a,
+  > a {
+    @include o-link;
+    display: unset;
+  }
+
+  > hr {
+    margin: $space-triple auto;
+  }
+
+  > ul {
+    margin-left: $space-double;
+  }
+
+  .wp-block-quote,
+  .wp-block-pullquote {
+    @include o-blockquote;
+  }
+}
